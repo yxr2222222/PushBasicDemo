@@ -1,0 +1,37 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 33
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 33
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly 'androidx.appcompat:appcompat:1.4.2'
+    compileOnly 'com.google.android.material:material:1.6.1'
+
+    // 友盟基础库
+    api project(path: ':UMeng')
+
+    // 友盟推送基础库，必须集成
+    api 'com.umeng.umsdk:push:6.6.2'
+
+    // 可选，如要使用地理围栏推送功能则必选
+    api 'com.umeng.umsdk:uyumao:1.1.2'
+}

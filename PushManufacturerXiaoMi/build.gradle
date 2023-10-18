@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 33
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 33
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly 'androidx.appcompat:appcompat:1.4.2'
+    compileOnly 'com.google.android.material:material:1.6.1'
+
+    // 友盟基础库
+    api project(path: ':UMeng')
+    api project(path: ':PushBasic')
+
+    api 'com.umeng.umsdk:xiaomi-umengaccs:2.0.0'
+    api 'com.umeng.umsdk:xiaomi-push:5.6.2'
+}

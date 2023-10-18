@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yxr.pushbasicdemo">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:name=".ui.MyApp"
+        android:theme="@style/Theme.PushBasicDemo"
+        tools:targetApi="31">
+        <activity
+            android:name=".ui.SplashActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.PushBasicDemo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 小米推送配置 -->
+        <meta-data android:name="xiaomi_id" android:value="替换成自己的小米Id"/>
+        <meta-data android:name="xiaomi_key" android:value="替换成自己的小米Key"/>
+
+        <!-- 华为推送配置 -->
+        <meta-data android:name="com.huawei.hms.client.appid" android:value="appid=替换成自己的华为AppId"/>
+
+        <!-- Oppo推送配置 -->
+        <meta-data android:name="oppo_appkey" android:value="替换成自己的Oppo的AppKey"/>
+        <meta-data android:name="oppo_appsecret" android:value="替换成自己的Oppo的AppSecret"/>
+
+        <!-- Vivo推送配置 -->
+        <meta-data android:name="com.vivo.push.app_id" android:value="替换成自己的Vivo的AppId"/>
+        <meta-data android:name="com.vivo.push.api_key" android:value="替换成自己的Vivo的AppKey"/>
+
+        <!-- Honor推送配置 -->
+        <meta-data android:name="com.hihonor.push.app_id" android:value="appid=替换成自己的荣耀AppId"/>
+
+        <!-- 魅族推送配置 -->
+        <meta-data android:name="meizu_appid" android:value="替换成自己的魅族AppId"/>
+        <meta-data android:name="meizu_appkey" android:value="替换成自己的魅族AppKey"/>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,11 @@
+rootProject.name = "PushBasicDemo"
+include ':app'
+
+include ':PushBasic'
+include ':UMeng'
+include ':PushManufacturerXiaoMi'
+include ':PushManufacturerHuaWei'
+include ':PushManufacturerMeiZu'
+include ':PushManufacturerOppo'
+include ':PushManufacturerVivo'
+include ':PushManufacturerHonor'
