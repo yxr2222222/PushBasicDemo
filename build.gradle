@@ -9,6 +9,7 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
 
         // 如果接了华为渠道推送
         maven { url 'https://developer.huawei.com/repo/'}
@@ -19,6 +20,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
 
         // 如果接了华为渠道推送
         maven { url 'https://developer.huawei.com/repo/'}

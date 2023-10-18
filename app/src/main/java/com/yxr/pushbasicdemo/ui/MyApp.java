@@ -18,6 +18,16 @@ public class MyApp extends Application {
     public void onCreate() {
         super.onCreate();
 
+        // 如果只集成了友盟基础服务，则只需要进行基础服务预初始化
+//        UmengManager.getInstance().preInit(this, new UmengConfig.Builder()
+//                .setAppKey("友盟AppKey")
+//                .setChannel("友盟渠道")
+//                .setMessageSecret("友盟MessageSecret")
+//                .setDebug(BuildConfig.DEBUG)
+//                .build());
+
+
+        // 如果集成了友盟推送服务，则需要进行推送服务预初始化（内部会初始化友盟基础服务）
         PushManager.getInstance().preInit(this, new PushConfig.Builder()
                 .setUmengConfog(new UmengConfig.Builder()
                         .setAppKey("友盟AppKey")

@@ -34,12 +34,17 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
 
-    implementation project(path: ':PushBasic')
-    implementation project(path: ':UMeng')
-//    implementation project(path: ':PushManufacturerVivo')
-//    implementation project(path: ':PushManufacturerHonor')
-    implementation project(path: ':PushManufacturerMeiZu')
-    implementation project(path: ':PushManufacturerHuaWei')
-    implementation project(path: ':PushManufacturerOppo')
-    implementation project(path: ':PushManufacturerXiaoMi')
+    // 友盟基础服务（必须，统计埋点 + 性能监控）
+    implementation 'com.github.yxr2222222.PushBasicDemo:umeng:v1.0.4'
+
+    // 友盟推送基础服务（可选，不需要推送服务可不选）
+    implementation 'com.github.yxr2222222.PushBasicDemo:pushbasic:v1.0.4'
+
+    // 友盟推送厂商渠道服务（可选，需要哪些厂商渠道就选）
+    implementation 'com.github.yxr2222222.PushBasicDemo:xiaomi:v1.0.4'
+    implementation 'com.github.yxr2222222.PushBasicDemo:huawei:v1.0.4'
+    implementation 'com.github.yxr2222222.PushBasicDemo:oppo:v1.0.4'
+    implementation 'com.github.yxr2222222.PushBasicDemo:vivo:v1.0.4'
+    implementation 'com.github.yxr2222222.PushBasicDemo:honor:v1.0.4'
+    implementation 'com.github.yxr2222222.PushBasicDemo:meizu:v1.0.4'
 }
