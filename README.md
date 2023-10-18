@@ -98,7 +98,7 @@ implementation 'com.github.yxr2222222.PushBasicDemo:meizu:v1.0.4'
 ```
 
 ### 使用说明
-1. AndroidManifest.xml厂商渠道推送配置（可选，如果需要）
+1. AndroidManifest.xml厂商渠道推送配置（可选，如果需要，注意：友盟和厂商那边要配置好）
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
