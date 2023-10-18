@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
+apply from: "$rootDir/publish.gradle"
 
 android {
     compileSdkVersion 33
@@ -20,16 +20,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
-    afterEvaluate {
-        publishing {
-            publications {
-                release(MavenPublication) {
-                    from components.release
-                }
-            }
-        }
-    }
 }
 
 dependencies {
@@ -38,8 +28,8 @@ dependencies {
     compileOnly 'com.google.android.material:material:1.6.1'
 
     // 友盟基础库
-    api project(path: ':UMeng')
-    api project(path: ':PushBasic')
+    compileOnly project(path: ':UMeng')
+    compileOnly project(path: ':PushBasic')
 
     api 'com.umeng.umsdk:honor-umengaccs:2.0.0'
     api 'com.umeng.umsdk:honor-push:7.0.41.301'
