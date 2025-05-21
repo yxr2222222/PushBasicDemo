@@ -13,7 +13,8 @@ public class PackageUtil {
     public static String getMetaData(@NonNull Context context, @NonNull String key) {
         try {
             ApplicationInfo appInfo = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
-            return appInfo.metaData.getString(key);
+            Object value = appInfo.metaData.get(key);
+            return value == null ? null : String.valueOf(value);
         } catch (Throwable e) {
             e.printStackTrace();
         }
