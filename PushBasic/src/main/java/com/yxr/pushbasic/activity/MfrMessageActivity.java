@@ -3,13 +3,13 @@ package com.yxr.pushbasic.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 
 import com.umeng.message.UmengNotifyClick;
 import com.umeng.message.entity.UMessage;
 import com.yxr.pushbasic.PushManager;
 import com.yxr.pushbasic.config.PushConfig;
-import com.yxr.umeng.UmengManager;
+
+import java.util.Map;
 
 public class MfrMessageActivity extends Activity {
 
@@ -17,14 +17,13 @@ public class MfrMessageActivity extends Activity {
         @Override
         public void onMessage(UMessage msg) {
             PushConfig pushConfig = PushManager.getInstance().getPushConfig();
-            final String body = msg == null || msg.getRaw() == null ? null : msg.getRaw().toString();
-            UmengManager.getInstance().log("UmengNotifyClick body: " + body);
+            final Map<String, String> extra = msg == null ? null : msg.getExtra();
 
-            if (pushConfig != null && pushConfig.getOnNotifyClickCallback() != null && !TextUtils.isEmpty(body)) {
+            if (pushConfig != null && pushConfig.getOnNotifyClickCallback() != null) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        pushConfig.getOnNotifyClickCallback().onNotifyClick(body);
+                        pushConfig.getOnNotifyClickCallback().onNotifyClick(extra);
                         finish();
                     }
                 });

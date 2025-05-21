@@ -1,7 +1,9 @@
 package com.yxr.pushbasic.callback;
 
-import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import java.util.Map;
 
 public interface OnNotifyClickCallback {
-    void onNotifyClick(@NonNull String body);
+    void onNotifyClick(@Nullable Map<String, String> extra);
 }
