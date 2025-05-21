@@ -1,11 +1,11 @@
 package com.yxr.pushbasic.callback;
 
-import androidx.annotation.Nullable;
+import androidx.annotation.NonNull;
 
 import com.umeng.message.entity.UMessage;
 
 import java.util.Map;
 
 public interface OnNotifyClickCallback {
-    void onNotifyClick(@Nullable UMessage msg);
+    void onNotifyClick(@NonNull Map<String, String> extraMap);
 }
