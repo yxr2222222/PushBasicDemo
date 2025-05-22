@@ -14,7 +14,7 @@ public class PackageUtil {
         try {
             ApplicationInfo appInfo = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
             Object value = appInfo.metaData.get(key);
-            return value == null ? null : String.valueOf(value);
+            return value == null ? null : String.valueOf(value).replace("\"", "");
         } catch (Throwable e) {
             e.printStackTrace();
         }
